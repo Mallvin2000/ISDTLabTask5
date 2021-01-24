@@ -49,4 +49,10 @@ public class Barrel : MonoBehaviour
     {
         StopCoroutine(firingRoutine);
     }
+
+    public void firecartridge() 
+    {
+        CreateProjectile();
+        weapon.ApplyRecoil();
+    }
 }

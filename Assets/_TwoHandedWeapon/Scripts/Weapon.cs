@@ -21,6 +21,9 @@ public class Weapon : XRGrabInteractable
     private Barrel barrel = null;
 
     private readonly  Vector3 gripRotation = new Vector3(45,0,0);
+
+    public bool hasCockedback = false;
+    public bool hasCockedForward = false;
     
     protected override void Awake()
     {
@@ -138,7 +141,13 @@ public class Weapon : XRGrabInteractable
 
     public void PullTrigger()
     {
-        barrel.StartFiring();
+        if (hasCockedback && hasCockedForward)
+        {
+          barrel.firecartridge();
+          hasCockedback = false;
+          hasCockedForward = false;
+        }
+        //barrel.StartFiring();
     }
 
     public void ReleaseTrigger()
