@@ -6,6 +6,7 @@ public class GuardHold : HandHold
 {
     protected override void Grab(XRBaseInteractor interactor)
     {
+        //Debug.Log("Grabbing pump");
         base.Grab(interactor);
         weapon.SetGuardHand(interactor);
     }
@@ -31,7 +32,7 @@ public class GuardHold : HandHold
 
     private void OnTriggerExit(Collider collider)
     {
-        Debug.Log("Exit");
+        //Debug.Log("Exit");
     }
 
 }

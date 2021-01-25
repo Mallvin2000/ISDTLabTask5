@@ -47,7 +47,8 @@ public class Barrel : MonoBehaviour
 
     public void StopFiring()
     {
-        StopCoroutine(firingRoutine);
+        //StopCoroutine(firingRoutine);
+        Debug.Log("Firing stopped, pump shotgun");
     }
 
     public void firecartridge() 

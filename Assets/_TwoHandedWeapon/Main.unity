@@ -1517,8 +1517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 066f2037a02d99c47a94c1851b78d8e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireWait: 0.1
-  projectilePrefab: {fileID: 0}
+  fireWait: 0.15
+  projectilePrefab: {fileID: 3918660965369907532, guid: 019af1b70d691324b85b66453c0629d0,
+    type: 3}
 --- !u!1001 &2712136669075340656
 PrefabInstance:
   m_ObjectHideFlags: 0

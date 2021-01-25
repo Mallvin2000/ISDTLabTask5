@@ -141,11 +141,16 @@ public class Weapon : XRGrabInteractable
 
     public void PullTrigger()
     {
+        Debug.Log("trigger pulled");
         if (hasCockedback && hasCockedForward)
         {
+            Debug.Log("Clear to fire");
           barrel.firecartridge();
           hasCockedback = false;
           hasCockedForward = false;
+        } else
+        {
+            Debug.Log("cant fire yet");
         }
         //barrel.StartFiring();
     }
