@@ -16,15 +16,22 @@ public class GuardHold : HandHold
         weapon.ClearGuardHand(interactor);
     }
 
-    protected void onTriggerEnter(Collider collider) {
-        if (collider.tag == "pumpBack") 
+    private void OnTriggerEnter(Collider collider) {
+        //Debug.Log("Hit detected" + collider.gameObject.name);
+        if (collider.gameObject.name == "pumpBack") 
         {
             Debug.Log("Pump is cocked back");
             GameObject.Find("Weapon2").GetComponent<Weapon>().hasCockedback = true;
-        } else if (collider.tag == "pumpForward") {
+        } else if (collider.gameObject.name == "pumpFront")
+        {
             Debug.Log("Pump is cocked forward and ready to fire");
             GameObject.Find("Weapon2").GetComponent<Weapon>().hasCockedForward = true;
         }
+    }
+
+    private void OnTriggerExit(Collider collider)
+    {
+        Debug.Log("Exit");
     }
 
 }

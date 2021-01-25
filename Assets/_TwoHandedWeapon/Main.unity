@@ -869,7 +869,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767490457}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.051, z: 0.864}
+  m_LocalPosition: {x: 0, y: 0.78, z: 0.864}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1080113003}
@@ -1406,7 +1406,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8512649500301870961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0.0058}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0.0198}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5062338311403620822}
@@ -1663,9 +1663,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.03
-  m_Height: 0.14703274
+  m_Height: 0.18817747
   m_Direction: 2
-  m_Center: {x: 0, y: 0.099999994, z: 0.31417918}
+  m_Center: {x: 0, y: 0.099999994, z: 0.30651408}
 --- !u!33 &4044710142917850329
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1793,7 +1793,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5062338311403980550}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.05418563
   m_Height: 0.10837126
@@ -2025,7 +2025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545599583377763791}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 1.062, z: 1.344}
+  m_LocalPosition: {x: 0.1, y: 1.149, z: 1.417}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5062338311403647518}
@@ -2125,7 +2125,7 @@ MonoBehaviour:
   m_CustomReticle: {fileID: 0}
   m_AttachTransform: {fileID: 5062338311403730136}
   m_AttachEaseInTime: 1.5
-  m_MovementType: 0
+  m_MovementType: 1
   m_TrackPosition: 1
   m_SmoothPosition: 1
   m_SmoothPositionAmount: 15
@@ -2157,6 +2157,8 @@ MonoBehaviour:
   m_RetainTransformParent: 1
   breakDistance: 0.25
   recoilAmount: 25
+  hasCockedback: 0
+  hasCockedForward: 0
 --- !u!54 &7007889647867152801
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2291,7 +2293,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.100000024, z: 0}
+  m_ConnectedAnchor: {x: 0, y: -0.100000024, z: 0.019799948}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -2344,7 +2346,7 @@ ConfigurableJoint:
   m_ZDrive:
     serializedVersion: 3
     positionSpring: 0
-    positionDamper: 0
+    positionDamper: 2
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
