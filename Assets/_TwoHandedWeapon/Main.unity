@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_RetainTransformParent: 1
   breakDistance: 0.25
   recoilAmount: 25
-  guardFollowMultiplier: 50
+  guardFollowMultiplier: 2
   hasCockedback: 0
   hasCockedForward: 0
 --- !u!54 &7007889647867152801
@@ -2374,7 +2374,7 @@ ConfigurableJoint:
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
+  m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
