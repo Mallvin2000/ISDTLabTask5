@@ -9,6 +9,9 @@ public class Weapon : XRGrabInteractable
 {
     public float breakDistance = 0.25f;
     public int recoilAmount = 25;
+    public float guardFollowMultiplier = 2;
+    private int shellsLeft = 5;
+    private Rigidbody guardRigidBody;
 
     private GripHold gripHold = null;
     private GuardHold guardHold = null;
@@ -24,7 +27,10 @@ public class Weapon : XRGrabInteractable
 
     public bool hasCockedback = false;
     public bool hasCockedForward = false;
-    
+
+
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -32,7 +38,9 @@ public class Weapon : XRGrabInteractable
         SetupExtras();
         
         onSelectEntered.AddListener(SetInitialRotation);
-    }
+
+        //guardRigidBody = guardHold.GetComponent<Rigidbody>();
+}
 
     private void SetupHolds()
     {
@@ -51,6 +59,20 @@ public class Weapon : XRGrabInteractable
         barrel.Setup(this);
 
     }
+
+
+
+    private void FixedUpdate()
+    {
+        guardRigidBody = guardHold.GetComponent<Rigidbody>();
+        if (guardHand != null)
+        {
+            //Debug.Log(guardHold.transform.position);
+            Vector3 deltaPos = guardHand.transform.position - guardHold.transform.position;
+            guardRigidBody.AddForce(deltaPos * guardFollowMultiplier, ForceMode.VelocityChange);
+        }
+    }
+
 
     private void OnDestroy()
     {
@@ -144,10 +166,18 @@ public class Weapon : XRGrabInteractable
         Debug.Log("trigger pulled");
         if (hasCockedback && hasCockedForward)
         {
-            Debug.Log("Clear to fire");
-          barrel.firecartridge();
-          hasCockedback = false;
-          hasCockedForward = false;
+            if (shellsLeft > 0)
+            {
+                Debug.Log("Clear to fire");
+                barrel.firecartridge();
+                hasCockedback = false;
+                hasCockedForward = false;
+                shellsLeft--;
+            } else
+            {
+                Debug.Log("No shells left to fire");
+            }
+            
         } else
         {
             Debug.Log("cant fire yet");
