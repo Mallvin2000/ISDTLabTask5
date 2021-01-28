@@ -38,9 +38,10 @@ public class Weapon : XRGrabInteractable
         SetupExtras();
         
         onSelectEntered.AddListener(SetInitialRotation);
+        guardRigidBody = guardHold.GetComponent<Rigidbody>();
 
         //guardRigidBody = guardHold.GetComponent<Rigidbody>();
-}
+    }
 
     private void SetupHolds()
     {
@@ -64,7 +65,6 @@ public class Weapon : XRGrabInteractable
 
     private void FixedUpdate()
     {
-        guardRigidBody = guardHold.GetComponent<Rigidbody>();
         if (guardHand != null)
         {
             //Debug.Log(guardHold.transform.position);

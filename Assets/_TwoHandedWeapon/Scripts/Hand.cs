@@ -14,6 +14,6 @@ public class Hand : XRDirectInteractor
 
     public void SetVisibility(bool value)
     {
-        meshRenderer.enabled = value;
+       // meshRenderer.enabled = value;
     }
 }
