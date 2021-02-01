@@ -35,4 +35,13 @@ public class GuardHold : HandHold
         //Debug.Log("Exit");
     }
 
+    public void movePump()
+    {
+        //transform.Translate(0f, 0f, -0.056f);
+        //transform.Translate(0f, 0f, 0.056f);
+        float speed = 3f;
+        Vector3 newPosition = new Vector3(0f, 0f, -0.056f);
+        transform.Translate(newPosition * Time.deltaTime * speed);
+    }
+
 }
