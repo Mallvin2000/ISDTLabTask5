@@ -1,5 +1,6 @@
 ﻿using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine;
+using System.Collections;
 
 // Only need to care put hand to the guard instead of which hand goes to Grip or Guard
 public class GuardHold : HandHold
@@ -37,11 +38,22 @@ public class GuardHold : HandHold
 
     public void movePump()
     {
-        //transform.Translate(0f, 0f, -0.056f);
-        //transform.Translate(0f, 0f, 0.056f);
-        float speed = 3f;
-        Vector3 newPosition = new Vector3(0f, 0f, -0.056f);
-        transform.Translate(newPosition * Time.deltaTime * speed);
+        StartCoroutine(ExampleCoroutine());
+        /*bug.Log("Moving pump");
+        transform.Translate(0f, 0f, -0.056f);
+        transform.Translate(0f, 0f, 0.056f);*/
+        /*loat speed = 0.3f;
+         Vector3 newPosition = new Vector3(0f, 0f, -5f);
+         transform.Translate(newPosition * Time.deltaTime * speed);*/
+
+    }
+
+    IEnumerator ExampleCoroutine()
+    {
+        float waitTime = 0.5f;
+        transform.Translate(0f, 0f, -0.076f);
+        yield return new WaitForSeconds(waitTime);
+        transform.Translate(0f, 0f, 0.076f);
     }
 
 }
