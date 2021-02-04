@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using TMPro;
 
 // If grab with GripHold, call OnSelectEnter which start the pickup interaction.
 // Rotate and Position the weapon accordingly on the Hand
@@ -28,6 +29,7 @@ public class Weapon : XRGrabInteractable
     public bool hasCockedback = false;
     public bool hasCockedForward = false;
 
+    public TextMeshProUGUI myText;
 
 
 
@@ -39,6 +41,7 @@ public class Weapon : XRGrabInteractable
         
         onSelectEntered.AddListener(SetInitialRotation);
         guardRigidBody = guardHold.GetComponent<Rigidbody>();
+        myText.text = "Shots left " + shellsLeft + "";
 
         //guardRigidBody = guardHold.GetComponent<Rigidbody>();
     }
@@ -173,6 +176,7 @@ public class Weapon : XRGrabInteractable
                 hasCockedback = false;
                 hasCockedForward = false;
                 shellsLeft--;
+                myText.text = "Shots left " + shellsLeft + "";
             } else
             {
                 Debug.Log("No shells left to fire");
