@@ -30,6 +30,7 @@ public class Weapon : XRGrabInteractable
     public bool hasCockedForward = false;
 
     public TextMeshProUGUI myText;
+    public AudioSource firingSound;
 
 
 
@@ -172,6 +173,7 @@ public class Weapon : XRGrabInteractable
             if (shellsLeft > 0)
             {
                 Debug.Log("Clear to fire");
+                firingSound.Play(0);
                 barrel.firecartridge();
                 hasCockedback = false;
                 hasCockedForward = false;

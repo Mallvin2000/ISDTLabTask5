@@ -7,12 +7,8 @@ using TMPro;
 // Only need to care put hand to the guard instead of which hand goes to Grip or Guard
 public class GuardHold : HandHold
 {
-    //public TextMeshProUGUI myText;
+    public AudioSource reloadSound;
 
-    /*private void Awake()
-    {
-        myText.text = "Hello";
-    }*/
     protected override void Grab(XRBaseInteractor interactor)
     {
         //Debug.Log("Grabbing pump");
@@ -59,6 +55,7 @@ public class GuardHold : HandHold
     IEnumerator ExampleCoroutine()
     {
         float waitTime = 0.4f;
+        reloadSound.Play(0);
         transform.Translate(0f, 0f, -0.076f);
         yield return new WaitForSeconds(waitTime);
         transform.Translate(0f, 0f, 0.076f);
